@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/13cde243-5a45-476e-ac70-f6ae6aca00d5/resourceGroups/appsvc_linux_centralus/providers/Microsoft.Web/sites/PollitosFrontEnd",
+    "appService.deploySubpath": "."
+}
