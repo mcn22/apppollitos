@@ -28,14 +28,7 @@ function Login() {
     };
 
     var test = "";
-    /*
-    Axios.get(baseUrl + `/${login.username}/${login.password}`, {
-      credentials: 'include'
-    })
-    */
-    Axios.post(baseUrl + `/${login.username}/${login.password}`, login, {
-      withCredentials: true
-    })
+    Axios.get(baseUrl + `/${login.username}/${login.password}`)
       .then(async response => {
 
         test = response.data.securityStamp;
