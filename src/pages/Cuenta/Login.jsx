@@ -1,7 +1,7 @@
 import React, { useState, useRef } from "react";
 import Footer from "../../components/Footer";
 import md5 from 'md5';
-import { Button, Alert, Label} from "reactstrap";
+import { Button, Alert, Label } from "reactstrap";
 import { Link } from "react-router-dom";
 import Axios from "axios";
 import { useHistory } from "react-router-dom";
@@ -29,40 +29,42 @@ function Login() {
 
     var test = "";
 
-    Axios.get(baseUrl + `/${login.username}/${login.password}`)
+    Axios.get(baseUrl + `/${login.username}/${login.password}`, {
+      credentials: 'include'
+    })
       .then(async response => {
-        
+
         test = response.data.securityStamp;
-        if(response.request.status === 200){
-            if(await response.data.securityStamp === "Activo"){
-             
+        if (response.request.status === 200) {
+          if (await response.data.securityStamp === "Activo") {
+
             //set localStorage
             localStorage.setItem("Id", response.data.id);
             localStorage.setItem("Cuenta", response.data.userName);
             localStorage.setItem("Email", response.data.email);
             localStorage.setItem("Perfil", true);
-            
-           
+
+
             history.push("/Home");
-            }
-            
-            if(response.data.securityStamp === "Inactivo") {
-              setError("Su cuenta se encuentra inactiva favor contactar a su administrador al 2545-1520");
-            }
-           
-            
-        }else{
-            setError("Su contraseña o usuario estan incorrectos");
+          }
+
+          if (response.data.securityStamp === "Inactivo") {
+            setError("Su cuenta se encuentra inactiva favor contactar a su administrador al 2545-1520");
+          }
+
+
+        } else {
+          setError("Su contraseña o usuario estan incorrectos");
         }
-        
+
       })
       .then(error => {
         console.log(error);
-        
+
         if (test !== "Inactivo") {
           setError("Su contraseña o usuario estan incorrectos, error!");
         }
-        
+
       });
   }
 
@@ -80,7 +82,7 @@ function Login() {
               <Label for="search-input1" style={{ color: "#D6D2C4" }}>Correo electrónico:</Label>
               <input
                 className="form-control"
-                style={{ background: "transparent", color:"#D6D2C4", borderRadius: "10px" }}
+                style={{ background: "transparent", color: "#D6D2C4", borderRadius: "10px" }}
                 defaultValue={""}
                 ref={emailRef}
                 required
@@ -92,7 +94,7 @@ function Login() {
               <Label for="search-input1" style={{ color: "#D6D2C4" }}>Contraseña:</Label>
               <input
                 className="form-control"
-                style={{ background: "transparent",color:"#D6D2C4", borderRadius: "10px" }}
+                style={{ background: "transparent", color: "#D6D2C4", borderRadius: "10px" }}
                 defaultValue={""}
                 ref={passwordRef}
                 type="password"
@@ -101,7 +103,7 @@ function Login() {
                 placeholder="Ingrese su contraseña"
               />
             </div>
-           
+
             <Button
               type="submit"
               color="warning"
@@ -114,15 +116,15 @@ function Login() {
             <br></br>
 
             <div className="d-flex align-items-center mt-4">
-              
+
               <Link to="/Registro" className="ml-1" style={{ color: "#D6D2C4", textDecoration: "none" }}>
-              No tiene cuenta? Registrarse
+                No tiene cuenta? Registrarse
               </Link>
             </div>
 
-           
+
             <Button
-              
+
               color="danger"
               className="w-100 btn-danger mt-4"
               style={{ borderRadius: "10px" }}
@@ -132,9 +134,9 @@ function Login() {
                 Registrarse
               </Link>
             </Button>
-            
-            
-            
+
+
+
           </form>
         </div>
       </div>
