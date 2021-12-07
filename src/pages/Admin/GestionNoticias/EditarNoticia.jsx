@@ -14,7 +14,7 @@ const UpdateNoticia = () => {
     function updateNoticia(e) {
         e.preventDefault();
         var today = new Date();
-        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        var date = new Date(today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate());
         var applicationUserId = localStorage.getItem('Id');
         const noticia = { id, descripcion, date , applicationUserId};
         Axios.put("https://pollitobackend.azurewebsites.net/api/Noticias/" + id, noticia)

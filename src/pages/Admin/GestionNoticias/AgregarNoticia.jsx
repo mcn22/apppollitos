@@ -12,7 +12,7 @@ const CreateNoticia = () => {
         e.preventDefault();
         var applicationUserId = localStorage.getItem('Id');
         var today = new Date();
-        var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+        var date = new Date(today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate());
         const noticia = { descripcion, date, applicationUserId };
         Axios.post("https://pollitobackend.azurewebsites.net/api/Noticias", noticia)
             .then(response => {

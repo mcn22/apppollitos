@@ -29,7 +29,7 @@ const CreateDiario = () => {
             .then(response => {
                 if (response.data.length === 0) {
                     var today = new Date();
-                    var date = today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate();
+                    var date = new Date(today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate());
                     const diario = { pollitoId, applicationUserId, date };
                     Axios.post("https://pollitobackend.azurewebsites.net/api/Diarios", diario)
                         .then(response => {
