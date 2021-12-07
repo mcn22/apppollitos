@@ -32,8 +32,8 @@ export default function DiariosPendientes() {
                 width: 50
             },
             {
-                label: 'Benefactor',
-                field: 'Benefactor',
+                label: 'Tutor',
+                field: 'Tutor',
                 width: 100
             },
             {
@@ -47,8 +47,8 @@ export default function DiariosPendientes() {
                 Nombre: item.nombre,
                 Apellido: item.primerApellido,
                 Telefono: item.telefono,
-                Benefactor: item.applicationUser.email,
-                TelefonoU: item.applicationUser.phoneNumber
+                Tutor: item.tutor.nombre + " " + item.tutor.primerApellido +" " +item.tutor.segundoApellido,
+                TelefonoU: item.tutor.telefono
             }))
     };
 

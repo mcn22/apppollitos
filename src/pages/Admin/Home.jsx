@@ -78,7 +78,7 @@ export default function NotAuthorize() {
                                     <i className="flaticon-clipboard"></i>
                                 </span>
                                 <h4 className="programme-heading">Gestionar pollitos</h4>
-                                <p>Visualiza los pollitos.</p>
+                                <p>Accede a la visualización de los datos de nuestros pollitos.</p>
                                 <Link to="/administrarPollitos" ><Button type="button" className="w-75 btn BotonesColor ml-4 "><FontAwesomeIcon icon={faArrowRight} /></Button></Link>
                             </div>
                         </div>

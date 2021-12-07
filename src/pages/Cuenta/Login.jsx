@@ -56,8 +56,6 @@ function Login() {
 
       })
       .then(error => {
-        console.log(error);
-
         if (test !== "Inactivo") {
           setError("Su contraseña o usuario estan incorrectos, error!");
         }

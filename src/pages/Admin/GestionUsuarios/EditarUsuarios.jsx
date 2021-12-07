@@ -65,21 +65,7 @@ const EditarUsuario = () => {
                                 icon: "error"
                             });
                         }
-                    })
-                    .then(error => {
-                        console.log(error);//recoger el error
-                        return swal(error, {
-                            icon: "error"
-                        });
-                    });
-
-                    if(error){
-                        return swal("Ha existido un error en la creacion del usuario!", {
-                            icon: "error"
-                        });
-                    }
-               
-                
+                    })             
             } else {
                 return swal("Debe ser mayor de 18 años para poder inscribirse en nuestros programas.", {
                     icon: "error"

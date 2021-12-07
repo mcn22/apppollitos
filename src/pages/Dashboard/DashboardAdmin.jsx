@@ -59,12 +59,15 @@ const Dashboard = () => {
 
       await Axios.get('https://pollitobackend.azurewebsites.net/api/Diarios')
         .then(response => {
+          
           response.data.forEach(element => {
             if (new Date(element.date).getFullYear === new Date().getFullYear && new Date(element.date).toLocaleString('default', { month: 'long' }) === new Date().toLocaleString('default', { month: 'long' })) {
               diario.push(element.pollitoId);
             }
+            
           });
           pollito.forEach(element => {
+            console.log(element);
             if (!diario.includes(element.id)) {
               miss.push(element);
             }
@@ -83,9 +86,9 @@ const Dashboard = () => {
       backName="Home"
       currentName="Dashboard"
     />
-    <div classNameName="content-wrapper container pt-5">
-      <div classNameName="mb-5 pt-5">
-        <div classNameName="container mb-5 mt-5">
+    <div className="content-wrapper container pt-5">
+      <div className="mb-5 pt-5">
+        <div className="container mb-5 mt-5">
           <div className="row">
             <div className="row mb-3">
               <div className="col-sm-12 mt-5">
@@ -106,7 +109,7 @@ const Dashboard = () => {
             <div className="icon">
               <i className="ion ion-bag"></i>
             </div>
-            <Link to="/administrarcuentas" className="small-box-footer">Mas Información <i className="fas fa-arrow-circle-right"></i></Link>
+            <Link to="/administrarcuentas" className="small-box-footer" style={{color:"darkblue"}}>Mas Información <i className="fas fa-arrow-circle-right"></i></Link>
           </div>
         </div>
         <div className="col-lg-3 col-6">
@@ -118,7 +121,7 @@ const Dashboard = () => {
             <div className="icon">
               <i className="ion ion-stats-bars"></i>
             </div>
-            <Link to="/AdministrarPollitos" className="small-box-footer">Mas Información <i className="fas fa-arrow-circle-right"></i></Link>
+            <Link to="/AdministrarPollitos" className="small-box-footer" style={{color:"darkblue"}}>Mas Información <i className="fas fa-arrow-circle-right"></i></Link>
           </div>
         </div>
         <div className="col-lg-3 col-6">
@@ -130,7 +133,7 @@ const Dashboard = () => {
             <div className="icon">
               <i className="ion ion-person-add"></i>
             </div>
-            <Link to={{ pathname: '/DiariosIncompletos', state: { pollitoIncomplete: detalles } }} className="small-box-footer">Mas Información <i className="fas fa-arrow-circle-right"></i></Link>
+            <Link to={{ pathname: '/DiariosIncompletos', state: { pollitoIncomplete: detalles } }} className="small-box-footer" style={{color:"darkblue"}}>Mas Información <i className="fas fa-arrow-circle-right"></i></Link>
           </div>
         </div>
         <div className="col-lg-3 col-6">
@@ -143,7 +146,7 @@ const Dashboard = () => {
             <div className="icon">
               <i className="ion ion-pie-graph"></i>
             </div>
-            <Link to={{ pathname: '/DiariosPendientes', state: { pollitoPending: missing } }} className="small-box-footer">Mas Información <i className="fas fa-arrow-circle-right"></i></Link>
+            <Link to={{ pathname: '/DiariosPendientes', state: { pollitoPending: missing } }} className="small-box-footer" style={{color:"darkblue"}}>Mas Información <i className="fas fa-arrow-circle-right"></i></Link>
           </div>
         </div>
       </div>

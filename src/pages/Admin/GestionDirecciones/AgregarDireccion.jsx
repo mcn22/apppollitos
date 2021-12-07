@@ -23,7 +23,6 @@ const CreateDireccion = () => {
                     return swal("Ha existido un error en la creacion de la dirección!", { icon: "error" });
                 }
             })
-            .then(error => { return swal(error, { icon: "error" }) });
     }
     return (<div>
         <Header />

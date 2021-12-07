@@ -29,7 +29,6 @@ const CreateProducto = () => {
                     return swal("Ha existido un error en la creacion del producto!", { icon: "error" });
                 }
             })
-            .then(error => { return swal(error, { icon: "error" }) });
     }
     return (<div>
         <Header />

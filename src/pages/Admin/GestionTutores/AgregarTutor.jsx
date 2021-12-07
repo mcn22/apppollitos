@@ -23,7 +23,6 @@ const CreateTutor = () => {
                     return swal("Ha existido un error en la creacion del tutor!", { icon: "error" });
                 }
             })
-            .then(error => { return swal(error, { icon: "error" }) });
     }
     return (<div>
         <Header />
