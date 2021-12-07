@@ -104,7 +104,7 @@ const Dashboard = () => {
           <div className="small-box bg-light p-3 rounded card">
             <div className="inner pt-4">
               <h3>{users.length}</h3>
-              <p>Total de usuarios</p>
+              <p>Total de usuarios registrados en el sistema</p>
             </div>
             <div className="icon">
               <i className="ion ion-bag"></i>
@@ -116,7 +116,7 @@ const Dashboard = () => {
           <div className="small-box bg-light p-3 rounded card">
             <div className="inner pt-4 ">
               <h3>{pollitos.length}<sup style={{ fontSize: "20px" }}></sup></h3>
-              <p>Total de pollitos</p>
+              <p>Total de pollitos registrados en el sistema</p>
             </div>
             <div className="icon">
               <i className="ion ion-stats-bars"></i>
@@ -128,7 +128,7 @@ const Dashboard = () => {
           <div className="small-box bg-light p-3 rounded card">
             <div className="inner pt-4 ">
               <h3>{pending.length}</h3>
-              <p>Diarios incompletos</p>
+              <p>Diarios incompletos actualmente </p>
             </div>
             <div className="icon">
               <i className="ion ion-person-add"></i>
@@ -140,8 +140,7 @@ const Dashboard = () => {
           <div className="small-box bg-light p-3 rounded card">
             <div className="inner pt-4 ">
               <h3>{missing.length}</h3>
-
-              <p>Diarios pendientes del mes en curso</p>
+              <p>Pollitos sin diarios asignados este mes</p>
             </div>
             <div className="icon">
               <i className="ion ion-pie-graph"></i>
